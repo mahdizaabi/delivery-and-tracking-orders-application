@@ -20,3 +20,32 @@ code {
 .navbar-brand {
     color: black !important;
 }
+
+
+h1 {
+    font-size: 20px !important;
+}
+
+.col-md-4 {
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.productcard__box {
+    background-color: rgb(248, 248, 248) !important;
+}
+
+.price {
+    min-width: 200px !important;
+    max-width: 250px !important;
+}
+
+.quantity__selection, .varient__selection {
+    min-width: 142px !important;
+}
+
+.btn{
+    color: white !important;
+    min-width: 110px !important;
+
+}
