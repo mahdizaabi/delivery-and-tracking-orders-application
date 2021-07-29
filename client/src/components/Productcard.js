@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
+import { Modal } from 'react-bootstrap';
+
 
 function Productcard({ product }) {
 
     /******Application state******/
     const [quantity, setQuantity] = useState(0);
     const [varient, setVarient] = useState("small");
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     /*******************************/
 
 
@@ -18,8 +26,11 @@ function Productcard({ product }) {
 
     return (
         <div className="m-1 shadow p-1 mb-5 bg-white rounded productcard d-flex flex-column align-items-center align-items-center">
-            <h1>{name}</h1>
-            <img src={image} alt="product_image" className="img-fluid" style={{ height: "200px", width: "200px" }} />
+
+            <div className="productcard__header d-flex flex-column align-items-center align-items-center" onClick={() => handleShow()}>
+                <h1>{name}</h1>
+                <img src={image} alt="product_image" className="img-fluid" style={{ height: "200px", width: "200px" }} />
+            </div>
 
             {/*  options */}
             <div className="options d-flex w-100 flex-row justify-content-lg-around justify-content-between m-10">
@@ -51,7 +62,16 @@ function Productcard({ product }) {
                 </div>
             </div>
 
-
+            {/**Modela ****/}
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Footer>
+                    <button className="btn">close</button>
+                </Modal.Footer>
+            </Modal>
         </div>
     )
 }

@@ -11,9 +11,7 @@ app.use(express.json());
 /* import view/route  */
 const pizzasRoute = require('./routes/pizzaRoute');
 
-app.use('/api/pizzas', pizzasRoute);
-
-
+app.use('/api/products', pizzasRoute);
 
 app.get('/', function (req, res, next) {
     res.send("welcome to Pizza delvery application!")
