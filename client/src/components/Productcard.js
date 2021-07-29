@@ -22,7 +22,7 @@ function Productcard({ product }) {
 
     const calculatePrice = (quantity, varientPrice) => quantity * varientPrice;
 
-    const { name, image, varients, prices } = product;
+    const { name, image, varients, prices, description } = product;
 
     return (
         <div className="m-1 shadow p-1 mb-5 bg-white rounded productcard d-flex flex-column align-items-center align-items-center">
@@ -62,16 +62,21 @@ function Productcard({ product }) {
                 </div>
             </div>
 
-            {/**Modela ****/}
+            {/**Model****/}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>{name}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Body className="d-flex p-3 flex-column align-items-center justify-content-center">
+                    <img src={image} alt="" style={{height:"380px", width: "380px"}}/>
+                    <p className="modal__description">{description}</p>
+                </Modal.Body>
                 <Modal.Footer>
                     <button className="btn">close</button>
                 </Modal.Footer>
             </Modal>
+            {/**Model****/}
+
         </div>
     )
 }

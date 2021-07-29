@@ -49,3 +49,9 @@ h1 {
     min-width: 110px !important;
 
 }
+
+.modal__description {
+    background-color: rgb(228, 228, 228) !important;
+    padding: 12px 24px !important;
+    margin-top: 18px !important;
+}
