@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
-
-
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../actions/cartAction';
 function Productcard({ product }) {
 
     /******Application state******/
@@ -21,6 +21,11 @@ function Productcard({ product }) {
         options.map((option, index) => <option key={index} value={option}>{option}</option>)
 
     const calculatePrice = (quantity, varientPrice) => quantity * varientPrice;
+
+    const dispatch = useDispatch();
+    const addTocart = () => {
+        dispatch(addToCart(product, quantity, varient))
+    }
 
     const { name, image, varients, prices, description } = product;
 
@@ -58,7 +63,7 @@ function Productcard({ product }) {
                 </div>
 
                 <div className="payement">
-                    <button className="btn bg-danger">Add to card</button>
+                    <button className="btn bg-danger" onClick={()=>addTocart()}>Add to card</button>
                 </div>
             </div>
 
@@ -68,7 +73,7 @@ function Productcard({ product }) {
                     <Modal.Title>{name}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="d-flex p-3 flex-column align-items-center justify-content-center">
-                    <img src={image} alt="" style={{height:"380px", width: "380px"}}/>
+                    <img src={image} alt="" style={{ height: "380px", width: "380px" }} />
                     <p className="modal__description">{description}</p>
                 </Modal.Body>
                 <Modal.Footer>

@@ -1,9 +1,12 @@
 import React from 'react';
-
+import {useDispatch, useSelector} from 'react-redux';
+import { CartReducer } from '../Reducers/cartReducer';
 import './navbar.css'
 
 export default function Navbar() {
-
+    const cartState = useSelector(state=>state.CartReducer)
+    const dispatch = useDispatch()
+       
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between shadow p-3 mb-5 bg-white rounded">
@@ -14,7 +17,7 @@ export default function Navbar() {
                             <a className="nav-link" href="###">Home<span className="sr-only">Login</span></a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="###">Cart</a>
+                            <a className="nav-link" href="###">Cart {cartState.cartItems.length}</a>
                         </li>
                     </ul>
                 </div>
