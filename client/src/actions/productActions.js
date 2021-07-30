@@ -2,9 +2,8 @@ import axios from "axios"
 
 export const getAllProducts = () => async (dispatch, getState) => {
     dispatch({
-        type: 'GET_PRODUCTS_REQUEST',
+        type: 'GET_PRODUCTS_REQUESTS',
     })
-
     try {
         const products = await axios.get('api/products/getallproducts');
         dispatch({
@@ -14,7 +13,7 @@ export const getAllProducts = () => async (dispatch, getState) => {
     } catch (e) {
         dispatch({
             type: 'GET_PRODUCTS_FAILED',
-            payload: { message: e.message }
+            payload: { error: e.message }
         })
     }
 
