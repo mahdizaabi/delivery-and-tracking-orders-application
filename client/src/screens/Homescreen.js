@@ -11,7 +11,7 @@ export default function Homescreen() {
         dispatch(getAllProducts());
 
     }, [])
-    const createProductList = () => pizzas.map((item, index) => {
+    const createProductList = () => products.map((item, index) => {
         return (
             <div key={index} className="productcard__box col-md-4 p-4">
                 <Productcard product={item} />
@@ -19,7 +19,7 @@ export default function Homescreen() {
         )
     });
     return (
-        <div className="row container-fluid">
+        <div className="row container m-auto p-2 justify-content-center">
             {loading ?
                 (<h1>Loading...</h1>)
                 : error ?
