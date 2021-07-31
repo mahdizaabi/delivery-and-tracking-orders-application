@@ -2,14 +2,13 @@
 
 export const addToCart = (product, selectedQuanity, selectedVarient) => (dispatch, getState) => {
     const cartItem = {
-        id: product.id,
+        id: product._id,
         name: product.name,
         image: product.image,
         selectedVarient, selectedQuanity,
         prices: product.prices,
-
     }
-
+ 
     dispatch({
         type: "ADD_PRODUCT_TO_CART",
         payload: cartItem
