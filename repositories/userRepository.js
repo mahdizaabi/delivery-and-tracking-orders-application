@@ -9,11 +9,16 @@ class userRepository {
 
     async saveNewUser(newUser) {
         try {
-            newUser.save();
+            await newUser.save();
         } catch (e) {
             throw e;
         }
 
+    }
+
+    async findUserByEmailAndPassword(email, password) {
+        const user = await userModel.find({email, password})
+        return user;
     }
 }
 

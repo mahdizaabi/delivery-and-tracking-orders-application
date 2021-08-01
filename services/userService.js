@@ -4,7 +4,7 @@
 const userRepository = require('../repositories/userRepository')
 
 
-class RegistrationService {
+class UserService {
 
     constructor() {
         this.userRepository = new userRepository()
@@ -18,7 +18,12 @@ class RegistrationService {
             throw e;
         }
     }
+
+    async userLoging(email, password) {
+            const user = await this.userRepository.findUserByEmailAndPassword(email, password);
+            return user
+    }
 }
 
 
-module.exports = new RegistrationService();
+module.exports = new UserService();
