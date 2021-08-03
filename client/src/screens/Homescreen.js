@@ -13,7 +13,8 @@ export default function Homescreen() {
 
     useEffect(() => {
         dispatch(getAllProducts());
-    }, [])
+    }, [dispatch])
+    
     const createProductList = () => products.map((item, index) => {
         return (
             <div key={index} className="productcard__box col-md-4 p-4">
@@ -32,3 +33,5 @@ export default function Homescreen() {
         </div>
     )
 }
+
+const MemoizedSubComponent = React.memo(Productcard);

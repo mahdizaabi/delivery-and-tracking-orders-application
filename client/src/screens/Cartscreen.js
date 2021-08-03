@@ -24,7 +24,7 @@ export default function OrdersScreen() {
                 <div className="col-md-4">
 
                     <p>Total amount to pay: {subTotal}dt</p>
-                    <Checkout subTotal></Checkout>
+                    <Checkout subTotal={subTotal}></Checkout>
                 </div>
             </div>)}
 

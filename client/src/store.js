@@ -7,11 +7,13 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { getProductsReducer } from './Reducers/productReducer'
 import { CartReducer } from './Reducers/cartReducer';
 import { userRegistrationReducer, userLoginReducer } from './Reducers/userReducer'
+import {orderReducer} from './Reducers/orderReducer';
+
 
 const finalReducer = combineReducers({
     getProductsReducer: getProductsReducer,
     CartReducer, userRegistrationReducer,
-    userLoginReducer
+    userLoginReducer,orderReducer
 })
 
 /* Local storage */

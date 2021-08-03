@@ -11,11 +11,12 @@ app.use(express.json());
 /* import view/route  */
 const productsRoute = require('./routes/productsRoute');
 const userRegistrationRoute = require('./routes/userRoute');
-
+const orderRoute = require('./routes/ordersRoute');
 
 
 app.use('/api/products', productsRoute);
 app.use('/api/users', userRegistrationRoute);
+app.use('/api/orders', orderRoute)
 app.get('/', function (req, res, next) {
     res.send("welcome to Pizza delvery application!")
 })
