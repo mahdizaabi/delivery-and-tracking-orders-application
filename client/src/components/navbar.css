@@ -1,3 +1,15 @@
 .navbar-collapse{
     flex-grow: 0 !important;
+    margin-right: 12px !important;
+    justify-content: space-between !important;
+
+}
+
+li {
+    min-width: 80px !important;
+}
+
+
+.dropdownlist {
+    background-color: red !important;
 }

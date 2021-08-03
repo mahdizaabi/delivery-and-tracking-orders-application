@@ -55,3 +55,60 @@ h1 {
     padding: 12px 24px !important;
     margin-top: 18px !important;
 }
+
+.icons {
+    width: 60px !important;
+    position: absolute !important;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 200px !important;
+    top: 60px !important;
+
+}
+
+h1{
+    font-size: 22px !important;
+    margin:0 !important;
+    padding: 0 !important;
+}
+
+.fa-plus{
+    color:green;
+}
+
+.fa-minus {
+    color:red;
+}
+
+.ordercard {
+    background-color: rgba(255, 255, 255, 0.931) !important;
+}
+.ordercard__infos {
+    background-color: whitesmoke !important;
+}
+
+.fa-trash {
+    color:red;
+    margin-left: 18px !important;
+}
+
+.order__name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800 !important;
+
+}
+
+.order__price, span.size {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.form {
+    border-color:red !important;
+}
+
+input {
+    margin-top: 10px !important;
+    box-shadow: none !important;
+    border-color: coral !important;
+}
+

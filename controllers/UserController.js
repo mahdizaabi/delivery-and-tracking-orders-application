@@ -21,7 +21,7 @@ class RegistrationController {
         try {
             const user = await UserService.userLoging(email, password);
             if (user.length > 0) {
-                res.status(200).send("user logged in successfully");
+                res.status(200).send(JSON.stringify(user[0]));
             } else {
                 res.status(301).send("user not found")
             }

@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../actions/cartAction';
 function Productcard({ product }) {
+    const ordersState = useSelector(state => state.CartReducer.cartItems)
+    const authState = useSelector(state => state.userLoginReducer);
 
     /******Application state******/
-    const [quantity, setQuantity] = useState(0);
+
+    const initialQuantity = ordersState.find(item=>item.id === product._id)
+
+    const [quantity, setQuantity] = useState((authState.success && initialQuantity) ? initialQuantity.selectedQuanity : 0);
     const [varient, setVarient] = useState("small");
 
     const [show, setShow] = useState(false);
@@ -14,8 +19,6 @@ function Productcard({ product }) {
     const handleShow = () => setShow(true);
 
     /*******************************/
-
-
     /*Generate select-options list*/
     const createOptionsList = (options) =>
         options.map((option, index) => <option key={index} value={option}>{option}</option>)
@@ -28,15 +31,12 @@ function Productcard({ product }) {
     }
 
     const { name, image, varients, prices, description } = product;
-
     return (
         <div className="m-1 shadow p-1 mb-5 bg-white rounded productcard d-flex flex-column align-items-center align-items-center">
-
             <div className="productcard__header d-flex flex-column align-items-center align-items-center" onClick={() => handleShow()}>
-                <h1>{name}</h1>
+                <p>{name}</p>
                 <img src={image} alt="product_image" className="img-fluid" style={{ height: "200px", width: "200px" }} />
             </div>
-
             {/*  options */}
             <div className="options d-flex w-100 flex-row justify-content-lg-around justify-content-between m-10">
                 <div className="text-left">
@@ -51,22 +51,18 @@ function Productcard({ product }) {
                         {createOptionsList([...Array(10).keys()])}
                     </select>
                 </div>
-
             </div>
             {/*  Prices and add to card */}
-
             <div className="options p-2 d-flex w-100 flex-row justify-content-lg-around
             justify-content-between m-10
             align-items-center">
                 <div className="price">
                     <h1>Price: {calculatePrice(quantity, prices[0][varient])}</h1>
                 </div>
-
                 <div className="payement">
                     <button className="btn bg-danger" onClick={()=>addTocart()}>Add to card</button>
                 </div>
             </div>
-
             {/**Model****/}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -81,7 +77,6 @@ function Productcard({ product }) {
                 </Modal.Footer>
             </Modal>
             {/**Model****/}
-
         </div>
     )
 }

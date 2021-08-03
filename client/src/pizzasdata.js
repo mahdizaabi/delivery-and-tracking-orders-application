@@ -1,5 +1,6 @@
 const pizzas = [
   {
+      "_id": 0,
     "name": "PEPPER BARBECUE CHICKEN",
     "varients": [
       "small",
@@ -18,6 +19,8 @@ const pizzas = [
     "description": "Pepper Barbecue Chicken I Cheese"
   },
   {
+    "_id": 1,
+
     "name": "Non Veg Supreme",
     "varients": [
       "small",
@@ -36,6 +39,8 @@ const pizzas = [
     "description": "Bite into supreme delight of Black Olives, Onions, Grilled Mushrooms, Pepper BBQ Chicken, Peri-Peri Chicken, Grilled Chicken Rashers"
   },
   {
+    "_id": 2,
+
     "name": "Golden Corn Pizza",
     "varients": [
       "small",
@@ -54,6 +59,8 @@ const pizzas = [
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYG5TzdWNaIDYzZDduV3pdcQbreJEWvIYmzg&usqp=CAU"
   },
   {
+    "_id": 3,
+
     "name": "Jalapeno & Red Paprika Pizza",
     "varients": [
       "small",
@@ -72,6 +79,8 @@ const pizzas = [
     "description": "This pizza is amazing and can become more delicious if we will add some more cheese in it. Ingredients are yeast, sugar, olive oil, salt, and all-purpose flour in a big bowl. After mixing all the ingredients, it is baked by adding Jalapeno and Paprika with corns over the cheese layer. The base is made crunchy to give it best taste. It can be made more tasty by sprinkling chili flakes and Oregano as per the taste."
   },
   {
+    "_id": 4,
+
     "name": "Margerita",
     "varients": [
       "small",
@@ -90,6 +99,8 @@ const pizzas = [
     "description": "The pizza base is made by mixing yeast, sugar, olive oil, salt, and all-purpose flour in a big bowl. After mixing all the ingredients, it is baked by adding the cheese as topping over it. The base is perfectly prepared by adding single layer of cheese over it. It is mouth-watering pizza for cheese lovers."
   },
   {
+    "_id": 5,
+
     "name": "Double Cheese Margherita Pizza",
     "varients": [
       "small",
