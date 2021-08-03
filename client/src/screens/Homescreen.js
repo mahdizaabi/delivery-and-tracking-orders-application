@@ -3,13 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import pizzas from '../pizzasdata'
 import Productcard from '../components/Productcard';
 import { getAllProducts } from '../actions/productActions'
+import Spinner from '../components/Spinner';
+
+
 export default function Homescreen() {
     const dispatch = useDispatch();
     const productsState = useSelector(state => state.getProductsReducer)
     const { error, products, loading } = productsState;
+
     useEffect(() => {
         dispatch(getAllProducts());
-
     }, [])
     const createProductList = () => products.map((item, index) => {
         return (
@@ -21,9 +24,9 @@ export default function Homescreen() {
     return (
         <div className="row container m-auto p-2 justify-content-center">
             {loading ?
-                (<h1>Loading...</h1>)
+                (<Spinner></Spinner>)
                 : error ?
-                    (<h1>Something went wrong</h1>)
+                    (<h1>{error.error}</h1>)
                     : createProductList()}
 
         </div>
