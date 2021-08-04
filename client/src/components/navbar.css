@@ -13,3 +13,16 @@ li {
 .dropdownlist {
     background-color: red !important;
 }
+
+
+.table {
+    text-align: center !important;
+    align-items: center !important;
+
+}
+.table td{
+    text-align: center !important;
+    font-size: 12px !important;
+    background-color: whitesmoke !important;
+    border-right: 2px solid rgb(15, 15, 15) !important;
+}

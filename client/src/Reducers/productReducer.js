@@ -19,6 +19,18 @@ export const getProductsReducer = (state = INITIAL_STATE, action) => {
                 loading: false,
                 error: action.payload
             })
+
+        case 'GET_FILTRED_PRODUCTS_REQUEST':
+            return ({
+                ...state,
+                loading: true
+            })
+        case 'GET_FILTRED_PRODUCTS':
+            return ({
+                ...state,
+                loading: false,
+                products: action.payload
+            })
         default:
             return state
     }

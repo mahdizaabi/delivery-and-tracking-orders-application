@@ -1,5 +1,3 @@
-
-
 const INITIAL_STATE = {}
 
 export const userRegistrationReducer = (state = INITIAL_STATE, action) => {
